@@ -16,6 +16,9 @@ app.get('/john', function(req, res) {
   res.status(200).json({ name: 'john' });
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+// TODO - change? not sure this is the best approach but functions for now
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+}
 
 module.exports = app;

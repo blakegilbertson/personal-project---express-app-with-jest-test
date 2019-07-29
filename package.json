@@ -2,9 +2,9 @@
   "name": "express-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
-    "test": "jest"
+    "test": "NODE_ENV=test jest"
   },
   "author": "Blake Gilbertson <blakegilbertson@protonmail.com> (blakegilbertson.com)",
   "license": "ISC",

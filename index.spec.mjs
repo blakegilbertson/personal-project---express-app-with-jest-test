@@ -1,5 +1,7 @@
-const request = require('supertest')
-const app = require('./index')
+// const request = require('supertest')
+// const app = require('./index')
+import request from 'supertest'
+import app from './index.mjs'
 
 
 describe('Test a 200 on routes', () => {
@@ -7,7 +9,7 @@ describe('Test a 200 on routes', () => {
   // As an FYI, I intentionally built these two differently 
   //   - the first based on the express tut and the second on MP
 
-  test('It should respond with a 200 status for /blake route', async () => {
+  test('It should respond with a 200 status and be json for /blake route', async () => {
     request(app)
       .get('/blake')
       // .expect('Content-Type', /json/)
@@ -15,6 +17,8 @@ describe('Test a 200 on routes', () => {
       .end(function(err, res) {
         if (err) throw err;
       });
+
+      done()
   });
 
   test('It should respond with a 200 status for route /john and the body name should equal john', async done => {
