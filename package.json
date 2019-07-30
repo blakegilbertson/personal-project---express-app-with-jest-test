@@ -4,8 +4,8 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "start": "node app",
-    "test": "NODE_ENV=test jest"
+    "start": "node ./server/app.server app",
+    "test": "jest"
   },
   "author": "Blake Gilbertson <blakegilbertson@protonmail.com> (blakegilbertson.com)",
   "license": "ISC",
