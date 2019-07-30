@@ -1,7 +1,16 @@
 // const request = require('supertest')
 // const app = require('./app')
 import request from 'supertest'
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 import app from '../express-app/app.js'
+
+describe('Basic test', () => {
+  test('It should add 2 + 2 and equal 4', () => {
+    expect(2+2).toBe(4)
+  })
+})
+
 
 describe('Test a 200 on routes', () => {
 

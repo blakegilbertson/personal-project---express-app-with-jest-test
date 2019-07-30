@@ -4,13 +4,15 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "start": "node ./server/app.server app",
+    "start": "npx babel-node server/app.server express-app/app",
     "test": "jest"
   },
   "author": "Blake Gilbertson <blakegilbertson@protonmail.com> (blakegilbertson.com)",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "core-js": "^3.1.4",
+    "express": "^4.17.1",
+    "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",

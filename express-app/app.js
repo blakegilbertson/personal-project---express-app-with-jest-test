@@ -1,16 +1,19 @@
 // const express = require('express')
 import express from 'express'
+
 const app = express()
 const router = express.Router()
 const port = 3000
 
-const { blakeDidThis, blakeAlsoDidThis } = require('../middleware/blake')
-// const john = require('../middleware/john')
+// const { blakeDidThis, blakeAlsoDidThis } = require('../middleware/blake')
+import { blakeDidThis, blakeAlsoDidThis } from '../middleware/blake'
 
-// app.get(
-//   '/', 
-//   (req, res) => res.send('Hello World!')
-// )
+const john = require('../middleware/john')
+
+app.get(
+  '/', 
+  (req, res) => res.send('Hello World!')
+)
 
 app.get(
   '/blake',
@@ -18,10 +21,10 @@ app.get(
   blakeAlsoDidThis
 )
 
-// app.get(
-//   '/john', 
-//   john
-// );
+app.get(
+  '/john', 
+  john
+);
 
 // found here, works: https://expressjs.com/en/guide/routing.html
 // todo - investigate the differences between this method and the above
@@ -34,4 +37,5 @@ app.get(
 //   res.status(500).send('Something broke!')
 // })
 
+// module.export = app
 export default app
