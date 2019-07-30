@@ -1,9 +1,5 @@
-// const request = require('supertest')
-// const app = require('./index')
-
-import request from 'supertest'
-import app from './app'
-
+const request = require('supertest')
+const app = require('./app')
 
 describe('Test a 200 on routes', () => {
 

@@ -2,15 +2,14 @@
   "name": "express-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index",
+  "main": "app",
   "scripts": {
-    "start": "node index",
+    "start": "node app",
     "test": "NODE_ENV=test jest"
   },
   "author": "Blake Gilbertson <blakegilbertson@protonmail.com> (blakegilbertson.com)",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25",
     "express": "^4.17.1"
   },
   "devDependencies": {

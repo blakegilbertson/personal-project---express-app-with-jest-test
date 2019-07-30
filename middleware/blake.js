@@ -6,7 +6,6 @@ const blakeDidThis = (req, res, next) => {
 
 const blakeAlsoDidThis = (req, res, next) => {
   res.send('Blake did this too')
-  next()
 }
 
 module.exports = { blakeDidThis, blakeAlsoDidThis }
