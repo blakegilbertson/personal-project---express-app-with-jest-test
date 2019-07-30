@@ -4,6 +4,7 @@
   "description": "",
   "main": "index",
   "scripts": {
+    "start": "node index",
     "test": "NODE_ENV=test jest"
   },
   "author": "Blake Gilbertson <blakegilbertson@protonmail.com> (blakegilbertson.com)",

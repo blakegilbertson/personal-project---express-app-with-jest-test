@@ -1,3 +1,3 @@
-// module.exports = {
-//   moduleFileExtensions: ['js'],
-// };
+module.exports = {
+  moduleFileExtensions: ["js", "json", "jsx", "node", "mjs"],
+};
