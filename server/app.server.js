@@ -1,4 +1,5 @@
-const app = require('../express-app/app')
+// const app = require('../express-app/app')
+import app from '../express-app/app'
 const port = 3000
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

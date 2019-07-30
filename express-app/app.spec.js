@@ -1,5 +1,7 @@
-const request = require('supertest')
-const app = require('./app')
+// const request = require('supertest')
+// const app = require('./app')
+import request from 'supertest'
+import app from '../express-app/app.js'
 
 describe('Test a 200 on routes', () => {
 
