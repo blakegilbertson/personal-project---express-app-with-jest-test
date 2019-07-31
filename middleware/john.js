@@ -4,4 +4,4 @@ const john = (req, res) => {
   res.status(200).json(johnData);
 }
 
-module.exports = john
+export default john

@@ -1,14 +1,28 @@
 import express from 'express'
 
 const app = express()
-const router = express.Router()
+// const router = express.Router()
+
+import aboutRoute from '../routes'
+
+app.use(
+  '/about',
+  // doesnt appear to be being used
+  aboutRoute, 
+
+  // works when hardcoded here
+  // (req, res) => {
+  //   console.log('1111 This is the About route')
+  //   res.send('1111 This is the About route')
+  // },
+)
+
+
+
+
 
 import { blakeDidThis, blakeAlsoDidThis } from '../middleware/blake'
 import john from '../middleware/john'
-
-
-
-
 
 app.get(
   '/', 
@@ -27,14 +41,15 @@ app.get(
 );
 
 // not linked to a specific route, runs for all
-app.use(function (req, res, next) {
-  console.log('Current Time:', Date.now())
-  next()
-})
+// app.use(function (req, res, next) {
+//   console.log('Current Time:', Date.now())
+//   next()
+// })
 
-app.use(
+app.get(
   '/book/:id', function(req, res, next) {
     console.log('/book/:id request type: ', req.method);
+    res.send('Some book page')
     next()
   }
 )
@@ -59,29 +74,5 @@ app.get('/user/:id', function (req, res, next) {
 // todo - investigate the differences between this method and the above
 import birds from '../middleware/birds'
 app.use('/birds', birds)
-
-
-
-// router() - all currently non-functional
-router.use(function (req, res, next) {
-  console.log('Blake')
-  next()
-})
-
-router.get(
-  '/blake',
-  blakeDidThis,
-  blakeAlsoDidThis, function (req, res) {
-    res.send('Completing router() for /blake');
-  }
-)
-
-router.get('/about', function (req, res) {
-  res.send('Completing router() for /about');
-})
-
-router.get('/something', function (req, res) {
-  res.send('HEEEEEYYY :', req.params);
-});
 
 export default app
