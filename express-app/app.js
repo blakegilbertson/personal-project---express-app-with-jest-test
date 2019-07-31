@@ -1,44 +1,25 @@
-// const express = require('express')
 import express from 'express'
 
 const app = express()
 const router = express.Router()
-const port = 3000
 
-console.log('router: ', router)
-
-router.get('/about', function (req, res) {
-  res.send('About this wiki');
-})
-
-
-// const { blakeDidThis, blakeAlsoDidThis } = require('../middleware/blake')
 import { blakeDidThis, blakeAlsoDidThis } from '../middleware/blake'
+import john from '../middleware/john'
 
-const john = require('../middleware/john')
 
-// app.get(
-//   '/', 
-//   (req, res) => res.send('Hello World!')
-// )
+
+
+
+app.get(
+  '/', 
+  (req, res) => res.send('Hello World!')
+)
 
 app.get(
   '/blake',
   blakeDidThis,
   blakeAlsoDidThis
 )
-
-
-
-// router.get(
-//   '/blake',
-//   blakeDidThis,
-//   blakeAlsoDidThis
-// )
-
-// router.get('/something', function (req, res) {
-//   res.send('HEEEEEYYY :', req.params);
-// });
 
 app.get(
   '/john', 
@@ -74,50 +55,33 @@ app.get('/user/:id', function (req, res, next) {
   res.send('special')
 })
 
+// found here, works: https://expressjs.com/en/guide/routing.html
+// todo - investigate the differences between this method and the above
+import birds from '../middleware/birds'
+app.use('/birds', birds)
 
-// doesnt work, why tho?
+
+
+// router() - all currently non-functional
 router.use(function (req, res, next) {
   console.log('Blake')
   next()
 })
 
+router.get(
+  '/blake',
+  blakeDidThis,
+  blakeAlsoDidThis, function (req, res) {
+    res.send('Completing router() for /blake');
+  }
+)
 
+router.get('/about', function (req, res) {
+  res.send('Completing router() for /about');
+})
 
+router.get('/something', function (req, res) {
+  res.send('HEEEEEYYY :', req.params);
+});
 
-
-
-// found here, works: https://expressjs.com/en/guide/routing.html
-// todo - investigate the differences between this method and the above
-// const birds = require('../middleware/birds')
-// app.use('/birds', birds)
-
-// found here, doesnt work yet: https://expressjs.com/en/guide/error-handling.html
-// app.use(function (err, req, res, next) {
-//   console.error(err.stack)
-//   res.status(500).send('Something broke!')
-// })
-
-// function errorHandler (err, req, res, next) {
-//   if (res.headersSent) {
-//     return next(err)
-//   }
-//   res.status(500)
-//   res.render('error', { error: err })
-// }
-
-// app.use(function (err, req, res, next) {
-//   console.error(err.stack)
-//   res.status(500).send('Something broke!')
-// })
-
-// app.use(function(err, req, res, next) {
-//   console.log(res);
-//   // logger.error('Error rendering route', {
-//   //   stack: err.stack,
-//   // })
-
-//   res.redirect('/error')
-// })
-
-// module.export = app
 export default app

@@ -8,5 +8,4 @@ const blakeAlsoDidThis = (req, res) => {
   res.send('Blake did this too')
 }
 
-// module.export = { blakeDidThis, blakeAlsoDidThis }
 export { blakeDidThis, blakeAlsoDidThis }

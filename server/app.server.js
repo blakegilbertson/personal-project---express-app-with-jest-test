@@ -1,4 +1,3 @@
-// const app = require('../express-app/app')
 import app from '../express-app/app'
 const port = 3000
 
