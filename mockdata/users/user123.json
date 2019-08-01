@@ -1,0 +1,12 @@
+{
+  "user id": 123,
+  "name": "Dave",
+  "age": 23,
+  "occupation": "accountant",
+  "address": {
+    "house number": 26,
+    "street": "Fake St",
+    "town": "Madeupville"
+  },
+  "hobbies": ["biking", "running", "squash"]
+}

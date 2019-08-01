@@ -1,3 +1,7 @@
-import aboutRoute from './about'
+import aboutRoutes from './about'
+import userRoutes from './user'
 
-export default aboutRoute
+export {
+  aboutRoutes,
+  userRoutes
+}
